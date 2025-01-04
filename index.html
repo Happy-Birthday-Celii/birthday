@@ -49,27 +49,20 @@
         .button:hover {
             background-color: #4682B4;
         }
-        .confetti {
+        #confetti {
             position: fixed;
-            width: 10px;
-            height: 10px;
-            background-color: #FF69B4; /* Pink */
-            animation: fall 3s linear infinite;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            display: none;
         }
-        @keyframes fall {
-            0% {
-                transform: translateY(-100vh);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh);
-                opacity: 0;
-            }
-        }
-        .message {
-            margin-top: 20px;
+        #message {
+            margin-top: 30px;
             font-size: 18px;
-            line-height: 1.5;
+            color: #333;
             display: none;
         }
     </style>
@@ -101,15 +94,27 @@
 
     <button class="button" onclick="blowCandles()">Kerzen ausblasen</button>
 
-    <div class="message" id="birthdayMessage">
+    <canvas id="confetti"></canvas>
+    <div id="message">
         <p>HAPPY BIRTHDAYY</p>
-        <p>Einfach schon 17 du alter Sack, die Kinder werden so schnell alt 😔 ich hoffe du hast heute einen super tollen tag und hoffentlich verbringst du den auf Ernst nicht irgendwie alleine in deinem Zimmer man 💔 finde es immernoch schade dass du nicht feierst aber solange du insgesamt einen tollen Tag hast ist alles superrrr</p>
-        <p>Finde es crazy irgendwie dass wir seit Anfang 2023 (glaub ich) befreundet sind und auch immer täglich schreiben und ich liebe deine random „Podcasts“ oder Life Storys oder wie man das nennen will.</p>
-        <p>Danke dass du immer da bist für mich und dass man dir auch immer random Sachen erzählen kann und denk dran dass ich auch immer für dich da bin. Du kannst immer zu mir kommen wenn irgendwas ist, vor allem bei Mathe (spaaß, oder auch nicht??) 🫶🫶</p>
-        <p>Du bist einfach so ein toller Mensch, vergiss das nichttt und ich bin einfach mega dankbar mit einem so sympathischen und talentierten Menschen befreundet sein zu können?? Und auch wenn du vielleicht manchmal an etwas zweifelst oder so, ich bin stolz auf dichhh</p>
-        <p>Ich hoffe du hast nicht nur einen super tollen Tag sondern natürlich auch ein super tolles Jahr und genieß dein letztes Jahr bevor du so offiziell erwachsen bist 💪💪 auf ein tolles weiteres Jahr mit random Trips wie nach bretzfeld oder random Streak Kuchen oder weitere sherlock/serien Marathons oder einfach andere random Sachen</p>
-        <p>Jetzt steht nicht nur mein Duolingo Streak Kuchen an sondern auch dein Geburtstags Streak Kuchen (ich glaube das macht keinen Sinn aber ja du weißt wie ich das meine) Das müssen wir auf jeden Fall mal machen.</p>
-        <p>Jaa ich wünsche dir alles beste zu deinem Geburtstag und ganz viel Glück und Gesundheit <33 du bist toll man</p>
+        <p>
+            Einfach schon 17 du alter Sack, die Kinder werden so schnell alt 😔 ich hoffe du hast heute einen super tollen tag und hoffentlich verbringst du den auf Ernst nicht irgendwie alleine in deinem Zimmer man 💔 finde es immernoch schade dass du nicht feierst aber solange du insgesamt einen tollen Tag hast ist alles superrrr
+        </p>
+        <p>
+            Finde es crazy irgendwie dass wir seit Anfang 2023 (glaub ich) befreundet sind und auch immer täglich schreiben und ich liebe deine random „Podcasts“ oder Life Storys oder wie man das nennen will. Danke dass du immer da bist für mich und dass man dir auch immer random Sachen erzählen kann und denk dran dass ich auch immer für dich da bin. Du kannst immer zu mir kommen wenn irgendwas ist, vor allem bei Mathe (spaaß, oder auch nicht??) 🫶🫶
+        </p>
+        <p>
+            Du bist einfach so ein toller Mensch, vergiss das nichttt und ich bin einfach mega dankbar mit einem so sympathischen und talentierten Menschen befreundet sein zu können?? Und auch wenn du vielleicht manchmal an etwas zweifelst oder so, ich bin stolz auf dichhh.
+        </p>
+        <p>
+            Ich hoffe du hast nicht nur einen super tollen Tag sondern natürlich auch ein super tolles Jahr und genieß dein letztes Jahr bevor du so offiziell erwachsen bist 💪💪 auf ein tolles weiteres Jahr mit random Trips wie nach Bretzfeld oder random Streak Kuchen oder weitere Sherlock/Serien Marathons oder einfach andere random Sachen.
+        </p>
+        <p>
+            Jetzt steht nicht nur mein Duolingo Streak Kuchen an sondern auch dein Geburtstags Streak Kuchen (ich glaube das macht keinen Sinn aber ja du weißt wie ich das meine) Das müssen wir auf jeden Fall mal machen.
+        </p>
+        <p>
+            Jaa ich wünsche dir alles Beste zu deinem Geburtstag und ganz viel Glück und Gesundheit <33 du bist toll man!
+        </p>
     </div>
 
     <script>
@@ -119,12 +124,35 @@
                 candle.style.opacity = 0; // Die Kerzen verschwinden
             });
 
-            // Konfetti erzeugen
-            for (let i = 0; i < 100; i++) {
-                let confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`; // Zufällige Farbe
-                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
-                document.body.appendChild(confetti);
+            // Konfetti anzeigen
+            showConfetti();
 
+            // Nachricht anzeigen
+            document.getElementById('message').style.display = 'block';
+        }
+
+        function showConfetti() {
+            const canvas = document.getElementById('confetti');
+            const ctx = canvas.getContext('2d');
+            canvas.style.display = 'block';
+
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const particles = [];
+            for (let i = 0; i < 300; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    r: Math.random() * 4 + 1,
+                    dx: Math.random() * 2 - 1,
+                    dy: Math.random() * 3 + 1,
+                    color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 
