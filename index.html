@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geburtstagsfeier</title>
+    <title>HAPPY BIRTHDAY</title>
     <style>
         body {
             text-align: center;
@@ -78,7 +78,6 @@
 
     <button class="button" onclick="blowCandles()">Kerzen ausblasen</button>
 
-    <audio id="birthdaySong" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
 
     <script>
         function blowCandles() {
@@ -86,9 +85,7 @@
             candles.forEach(candle => {
                 candle.style.opacity = 0; // Die Kerzen verschwinden
             });
-            var audio = document.getElementById('birthdaySong');
-            audio.play(); // Geburtstagston abspielen
-            alert("Happy Birthday!");
+
         }
     </script>
 </body>
