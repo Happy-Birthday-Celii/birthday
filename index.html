@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geburtstagskuchen</title>
+    <title>HAPPY BIRTHDAY</title>
     <style>
         body {
             text-align: center;
@@ -27,16 +27,10 @@
             top: -30px;
             border-radius: 2px;
         }
-        .candle::after {
-            content: '🎂';
-            font-size: 16px;
-            position: absolute;
-            top: -20px;
-            left: -2px;
-        }
         .candles-container {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            justify-content: space-around;
             position: absolute;
             top: 20px;
             left: 10px;
@@ -58,31 +52,40 @@
     </style>
 </head>
 <body>
-    <h1>HAPPY BIRTHDAY <333</h1>
-    <h3>HAPPY BIRTHDAYY
+    <h1>HAPPY BIRTHDAYYY!!! <33</h1>
+    <h4>HAPPY BIRTHDAYY
 Einfach schon 17 du alter Sack, die Kinder werden so schnell alt 😔 ich hoffe du hast heute einen super tollen tag und hoffentlich verbringst du den auf Ernst nicht irgendwie alleine in deinem Zimmer man 💔 finde es immernoch schade dass du nicht feierst aber solange du insgesamt einen tollen Tag hast ist alles superrrr
 Finde es crazy irgendwie dass wir seit Anfang 2023 (glaub ich) befreundet sind und auch immer täglich schreiben und ich liebe deine random „Podcasts“ oder Life Storys oder wie man das nennen will 
 Danke dass du immer da bist für mich und dass man dir auch immer random Sachen erzählen kann und denk dran dass ich auch immer für dich da bin. Du kannst immer zu mir kommen wenn irgendwas ist, vor allem bei Mathe (spaaß, oder auch nicht??) 🫶🫶
 Du bist einfach so ein toller Mensch, vergiss das nichttt und ich bin einfach mega dankbar mit einem so sympathischen und talentierten Menschen befreundet sein zu können?? Und auch wenn du vielleicht manchmal an etwas zweifelst oder so, ich bin stolz auf dichhh
 Ich hoffe du hast nicht nur einen super tollen Tag sondern natürlich auch ein super tolles Jahr und genieß dein letztes Jahr bevor du so offiziell erwachsen bist 💪💪 auf ein tolles weiteres Jahr mit random Trips wie nach bretzfeld oder random Streak Kuchen oder weitere sherlock/serien Marathons oder einfach andere random Sachen 
 Jetzt steht nicht nur mein Duolingo Streak Kuchen an sondern auch dein Geburtstags Streak Kuchen (ich glaube das macht keinen Sinn aber ja du weißt wie ich das meine) Das müssen wir auf jeden Fall mal machen
-Jaa ich wünsche dir alles beste zu deinem Geburtstag und ganz viel Glück und Gesundheit <33 du bist toll man</h3>
+Jaa ich wünsche dir alles beste zu deinem Geburtstag und ganz viel Glück und Gesundheit <33 du bist toll man </h4>
     <div class="cake">
         <div class="candles-container">
+            <!-- Hier werden 17 Kerzen hinzugefügt -->
             <div class="candle" style="left: 5%"></div>
-            <div class="candle" style="left: 20%"></div>
+            <div class="candle" style="left: 15%"></div>
+            <div class="candle" style="left: 25%"></div>
             <div class="candle" style="left: 35%"></div>
-            <div class="candle" style="left: 50%"></div>
+            <div class="candle" style="left: 45%"></div>
+            <div class="candle" style="left: 55%"></div>
             <div class="candle" style="left: 65%"></div>
+            <div class="candle" style="left: 75%"></div>
+            <div class="candle" style="left: 85%"></div>
+            <div class="candle" style="left: 10%"></div>
+            <div class="candle" style="left: 20%"></div>
+            <div class="candle" style="left: 30%"></div>
+            <div class="candle" style="left: 40%"></div>
+            <div class="candle" style="left: 50%"></div>
+            <div class="candle" style="left: 60%"></div>
+            <div class="candle" style="left: 70%"></div>
             <div class="candle" style="left: 80%"></div>
-            <div class="candle" style="left: 95%"></div>
-            <!-- Add more candles as needed -->
         </div>
     </div>
 
     <button class="button" onclick="blowCandles()">Kerzen ausblasen</button>
 
-    <audio id="birthdaySong" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
 
     <script>
         function blowCandles() {
@@ -90,8 +93,8 @@ Jaa ich wünsche dir alles beste zu deinem Geburtstag und ganz viel Glück und G
             candles.forEach(candle => {
                 candle.style.opacity = 0; // Die Kerzen verschwinden
             });
-           
+
         }
     </script>
 </body>
-</html>
+</html> 
