@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAPPY BIRTHDAY</title>
+    <title>Geburtstagskuchen</title>
     <style>
         body {
             text-align: center;
@@ -27,10 +27,16 @@
             top: -30px;
             border-radius: 2px;
         }
+        .candle::after {
+            content: '🎂';
+            font-size: 16px;
+            position: absolute;
+            top: -20px;
+            left: -2px;
+        }
         .candles-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: space-between;
             position: absolute;
             top: 20px;
             left: 10px;
@@ -49,73 +55,34 @@
         .button:hover {
             background-color: #4682B4;
         }
-        #confetti {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1000;
-            display: none;
-        }
-        #message {
-            margin-top: 30px;
-            font-size: 18px;
-            color: #333;
-            display: none;
-        }
     </style>
 </head>
 <body>
-    <h1>HAPPY BIRTHDAYYY!!! <33</h1>
+    <h1>HAPPY BIRTHDAY <333</h1>
+    <h3>HAPPY BIRTHDAYY
+Einfach schon 17 du alter Sack, die Kinder werden so schnell alt 😔 ich hoffe du hast heute einen super tollen tag und hoffentlich verbringst du den auf Ernst nicht irgendwie alleine in deinem Zimmer man 💔 finde es immernoch schade dass du nicht feierst aber solange du insgesamt einen tollen Tag hast ist alles superrrr
+Finde es crazy irgendwie dass wir seit Anfang 2023 (glaub ich) befreundet sind und auch immer täglich schreiben und ich liebe deine random „Podcasts“ oder Life Storys oder wie man das nennen will 
+Danke dass du immer da bist für mich und dass man dir auch immer random Sachen erzählen kann und denk dran dass ich auch immer für dich da bin. Du kannst immer zu mir kommen wenn irgendwas ist, vor allem bei Mathe (spaaß, oder auch nicht??) 🫶🫶
+Du bist einfach so ein toller Mensch, vergiss das nichttt und ich bin einfach mega dankbar mit einem so sympathischen und talentierten Menschen befreundet sein zu können?? Und auch wenn du vielleicht manchmal an etwas zweifelst oder so, ich bin stolz auf dichhh
+Ich hoffe du hast nicht nur einen super tollen Tag sondern natürlich auch ein super tolles Jahr und genieß dein letztes Jahr bevor du so offiziell erwachsen bist 💪💪 auf ein tolles weiteres Jahr mit random Trips wie nach bretzfeld oder random Streak Kuchen oder weitere sherlock/serien Marathons oder einfach andere random Sachen 
+Jetzt steht nicht nur mein Duolingo Streak Kuchen an sondern auch dein Geburtstags Streak Kuchen (ich glaube das macht keinen Sinn aber ja du weißt wie ich das meine) Das müssen wir auf jeden Fall mal machen
+Jaa ich wünsche dir alles beste zu deinem Geburtstag und ganz viel Glück und Gesundheit <33 du bist toll man</h3>
     <div class="cake">
         <div class="candles-container">
-            <!-- Hier werden 17 Kerzen hinzugefügt -->
             <div class="candle" style="left: 5%"></div>
-            <div class="candle" style="left: 15%"></div>
-            <div class="candle" style="left: 25%"></div>
-            <div class="candle" style="left: 35%"></div>
-            <div class="candle" style="left: 45%"></div>
-            <div class="candle" style="left: 55%"></div>
-            <div class="candle" style="left: 65%"></div>
-            <div class="candle" style="left: 75%"></div>
-            <div class="candle" style="left: 85%"></div>
-            <div class="candle" style="left: 10%"></div>
             <div class="candle" style="left: 20%"></div>
-            <div class="candle" style="left: 30%"></div>
-            <div class="candle" style="left: 40%"></div>
+            <div class="candle" style="left: 35%"></div>
             <div class="candle" style="left: 50%"></div>
-            <div class="candle" style="left: 60%"></div>
-            <div class="candle" style="left: 70%"></div>
+            <div class="candle" style="left: 65%"></div>
             <div class="candle" style="left: 80%"></div>
+            <div class="candle" style="left: 95%"></div>
+            <!-- Add more candles as needed -->
         </div>
     </div>
 
     <button class="button" onclick="blowCandles()">Kerzen ausblasen</button>
 
-    <canvas id="confetti"></canvas>
-    <div id="message">
-        <p>HAPPY BIRTHDAYY</p>
-        <p>
-            Einfach schon 17 du alter Sack, die Kinder werden so schnell alt 😔 ich hoffe du hast heute einen super tollen tag und hoffentlich verbringst du den auf Ernst nicht irgendwie alleine in deinem Zimmer man 💔 finde es immernoch schade dass du nicht feierst aber solange du insgesamt einen tollen Tag hast ist alles superrrr
-        </p>
-        <p>
-            Finde es crazy irgendwie dass wir seit Anfang 2023 (glaub ich) befreundet sind und auch immer täglich schreiben und ich liebe deine random „Podcasts“ oder Life Storys oder wie man das nennen will. Danke dass du immer da bist für mich und dass man dir auch immer random Sachen erzählen kann und denk dran dass ich auch immer für dich da bin. Du kannst immer zu mir kommen wenn irgendwas ist, vor allem bei Mathe (spaaß, oder auch nicht??) 🫶🫶
-        </p>
-        <p>
-            Du bist einfach so ein toller Mensch, vergiss das nichttt und ich bin einfach mega dankbar mit einem so sympathischen und talentierten Menschen befreundet sein zu können?? Und auch wenn du vielleicht manchmal an etwas zweifelst oder so, ich bin stolz auf dichhh.
-        </p>
-        <p>
-            Ich hoffe du hast nicht nur einen super tollen Tag sondern natürlich auch ein super tolles Jahr und genieß dein letztes Jahr bevor du so offiziell erwachsen bist 💪💪 auf ein tolles weiteres Jahr mit random Trips wie nach Bretzfeld oder random Streak Kuchen oder weitere Sherlock/Serien Marathons oder einfach andere random Sachen.
-        </p>
-        <p>
-            Jetzt steht nicht nur mein Duolingo Streak Kuchen an sondern auch dein Geburtstags Streak Kuchen (ich glaube das macht keinen Sinn aber ja du weißt wie ich das meine) Das müssen wir auf jeden Fall mal machen.
-        </p>
-        <p>
-            Jaa ich wünsche dir alles Beste zu deinem Geburtstag und ganz viel Glück und Gesundheit <33 du bist toll man!
-        </p>
-    </div>
+    <audio id="birthdaySong" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
 
     <script>
         function blowCandles() {
@@ -123,36 +90,8 @@
             candles.forEach(candle => {
                 candle.style.opacity = 0; // Die Kerzen verschwinden
             });
-
-            // Konfetti anzeigen
-            showConfetti();
-
-            // Nachricht anzeigen
-            document.getElementById('message').style.display = 'block';
+           
         }
-
-        function showConfetti() {
-            const canvas = document.getElementById('confetti');
-            const ctx = canvas.getContext('2d');
-            canvas.style.display = 'block';
-
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-
-            const particles = [];
-            for (let i = 0; i < 300; i++) {
-                particles.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    r: Math.random() * 4 + 1,
-                    dx: Math.random() * 2 - 1,
-                    dy: Math.random() * 3 + 1,
-                    color: `hsl(${Math.random() * 360}, 100%, 50%)`,
-                });
-            }
-
-            function draw() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach(p => {
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.r, 
+    </script>
+</body>
+</html>
